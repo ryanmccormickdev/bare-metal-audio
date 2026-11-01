@@ -2,14 +2,6 @@
 /NOTES.md
 /MEDIA_NEEDED.md
 
-# Eagle schematic and board files: held back until the embedded part-library
-# licences are checked (SamacSys and Ultra Librarian parts). See NOTES.md.
-# Delete these four lines to publish them.
-/hardware/design/*.sch
-/hardware/design/*.brd
-/hardware/design/history/
-/hardware/cnc-milled-2026-08/design/
-
 .DS_Store
 *.bak
 *_wrap.html

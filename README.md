@@ -4,7 +4,7 @@
   <img src="media/2026-09-17-1941-assembled.jpg" width="560" alt="The finished interface in an aluminum box: two combo jacks, two gain knobs, toggle switches and an OLED reading BARE METAL AUDIO, 2 CH USB INTERFACE">
 </p>
 
-A 2-channel USB audio interface I designed and built over summer 2026. Each channel takes a mic (with 48 V phantom power) or an instrument, a Teensy 4.0 handles the USB audio, and there's a little OLED screen with one knob. It worked on a breadboard in August. I milled my own circuit board on a desktop CNC, then ordered proper ones from JLCPCB, and built the whole thing into an aluminum box with the circuit engraved on the lid. Then I fried it with my 48 V supply.
+A 2-channel USB audio interface I designed and built over summer 2026. Each channel takes a mic (with 48 V phantom power) or an instrument, a Teensy 4.0 handles the USB audio, and there's a little OLED screen with one knob. It worked on a breadboard in August. I milled my own circuit board on a desktop CNC, gave up on that and ordered proper ones from PCBWay, and built the whole thing into an aluminum box with the circuit engraved on the lid. About ten seconds after I took the photo above, I fried it.
 
 I'm still proud of it. That's such a cool way to completely fail at something.
 
@@ -28,7 +28,7 @@ I spent the summer at home in Colorado with an internship during the day, so mos
   <img src="media/2026-06-30-0112-boost-converter.jpg" width="380" alt="A boost converter module on a breadboard with probes clipped on">
 </p>
 
-Condenser mics need 48 V phantom power. By 1 am on June 30 the boost converter that makes it was putting out about 50 V on the scope. (Remember the 48 volts. They come back at the end.)
+Condenser mics need 48 V phantom power. By 1 am on June 30 the boost converter that makes it was putting out about 50 V on the scope.
 
 ### July: breadboards
 
@@ -38,7 +38,7 @@ Condenser mics need 48 V phantom power. By 1 am on June 30 the boost converter t
   <img src="media/2026-07-15-0006-mic.jpg" width="250" alt="Film-look photo of an AKG condenser mic in a shock mount in front of the breadboards">
 </p>
 
-The first recording came out of it on July 13 ([listen](media/2026-07-13-first-output.mp3)). Two nights later, at midnight, I was testing my AKG condenser mic on the breadboard preamp.
+The first recording came out of it on July 13 ([listen](media/2026-07-13-first-output.mp3)). I'm pretty sure the song is one I wrote and never put out anywhere. Two nights later, at midnight, I was testing my AKG condenser mic on the breadboard preamp.
 
 ### August 4-5: it works, kind of
 
@@ -61,7 +61,7 @@ Then I recorded both channels at once and filmed it ([video](media/2026-08-05-fi
 
 <img src="hardware/renders/sep7_top.png" width="300" alt="Render of the through-hole board: two preamps, a buffer, the boost converter footprint and a row of headers along one edge">
 
-The next night I started the board over from scratch. The new version is all through-hole parts, names the actual chips (THAT1512 preamps, an OPA1642 buffer) instead of generic op-amp symbols, treats the Teensy and its audio shield as one module, and moves every jack, knob and switch off the board onto headers. I started it at 8:57 pm on August 6 and it was fully routed at 10:09 pm on August 7. Fusion saved the schematic 30 times and the board 47 times that week.
+The next night I started the board over from scratch. The new version is all through-hole parts, names the actual chips (THAT1512 preamps, an OPA1642 buffer) instead of generic op-amp symbols, treats the Teensy and its audio shield as one module, and moves every jack, knob and switch off the board onto headers. I started it at 9:57 pm on August 6 and it was fully routed at 11:09 pm on August 7. Fusion saved the schematic 30 times and the board 47 times that week.
 
 ### August 11-14: milling it myself
 
@@ -71,7 +71,7 @@ The next night I started the board over from scratch. The new version is all thr
   <img src="media/2026-08-14-milling.gif" width="300" alt="The CNC cutting isolation traces into a copper board">
 </p>
 
-Copper clad, a pile of tiny end mills, and a desktop CNC (a Genmitsu 3018-PROVer). The copper isn't flat enough to just cut, since it varied by about as much as the cut depth, so I probed a 14 x 10 grid of heights first and let the controller follow it. The two toolpaths from the night of August 13 are called `Good State.nc` (0.16 mm deep, 1:26 am) and `idontevenknow.nc` (0.08 mm deep, 2:25 am). That same night the Fusion project went from `AUDIO INTERFACE` to `AUDIO INTERFACE_BROKEN` to `AUDIO INTERFACE_brokener?`.
+Copper clad, a pile of tiny end mills, and a desktop CNC (a Genmitsu 3018-PROVer). The copper isn't flat enough to just cut, since it varied by about as much as the cut depth, so I probed a 14 x 10 grid of heights first and let the controller follow it. The two toolpaths from the night of August 13 are called `Good State.nc` (0.16 mm deep, 2:26 am) and `idontevenknow.nc` (0.08 mm deep, 3:25 am). That same night the Fusion project went from `AUDIO INTERFACE` to `AUDIO INTERFACE_BROKEN` to `AUDIO INTERFACE_brokener?`. I'd edited some of the library footprints so the mill wouldn't drill certain holes, and that left footprints misaligned and the design-rule check full of errors. Every attempt was save a backup, try a fix, and I ran out of names.
 
 <p>
   <img src="media/2026-08-14-0153-milling.jpg" width="300" alt="The mill partway through cutting traces into copper">
@@ -79,35 +79,37 @@ Copper clad, a pile of tiny end mills, and a desktop CNC (a Genmitsu 3018-PROVer
   <img src="media/2026-08-14-0555-traces.jpg" width="220" alt="Close-up of milled copper traces and pads">
 </p>
 
-The last photo of that board is from 5:55 am.
+The last photo of that board is from 5:55 am. It didn't work. Copper dust packed into the cut channels and shorted the traces, and I didn't have the right chemicals or tools to clean it out. Trace width was a problem across the whole board, and every failed cut meant over an hour to set up and probe a fresh blank.
 
 ### September: real boards
 
 <p>
-  <img src="media/2026-09-16-boards-arrive.jpg" width="250" alt="The black JLCPCB board with the Teensy module and power modules soldered on">
+  <img src="media/2026-09-16-boards-arrive.jpg" width="250" alt="The black PCBWay board with the Teensy module and power modules soldered on">
   <img src="media/2026-09-17-0021-wiring.jpg" width="300" alt="Film-look photo of the front panel being wired to the board">
   <img src="media/2026-09-17-0114-populated.jpg" width="300" alt="The fully populated board: preamps, film capacitors, big electrolytics, the boost converter and the Teensy">
 </p>
 
-On September 7 I spent the morning and early afternoon on new toolpaths and drill programs for the mill (`07mmholes`, `actual07holes`, `08holes`, `08real`, `1mmtop`, `1mmreal`), and at 4:17 pm I packaged the board for JLCPCB instead. The Fusion project for that one is called `AUDIO INTERFACE_brokener_forbuying`. By September 16 the boards were on my desk. Seeing the thing I designed in this real, magical form factor was awesome. The board was fully populated by 1:14 am on the 17th.
+On the afternoon of September 7 I was still making toolpaths and drill programs for the mill (`07mmholes`, `actual07holes`, `08holes`, `08real`, `1mmtop`, `1mmreal`). Then I made the call to stop milling and have the boards made. At 5:17 pm I packaged the board (the Fusion project for that one is called `AUDIO INTERFACE_brokener_forbuying`) and ordered five from PCBWay for $79.86. The build time was supposed to be 3 to 4 days, but production hit an error and the order slipped by several days, in the middle of a race to finish the whole thing before I left for Stanford. By September 16 the boards were on my desk. Seeing the thing I designed in this real, magical form factor was awesome. The board was fully populated by 1:14 am on the 17th.
 
 ### September 7-17: the box
 
 <p>
   <img src="media/2026-09-14-panel-milling.gif" width="300" alt="The CNC cutting a rectangular window into an aluminum panel">
-  <img src="media/2026-09-15-front-panel.jpg" width="300" alt="A black textured front panel with two combo jacks, knobs, four toggle switches and a window for the screen">
+  <img src="media/2026-09-15-front-panel.jpg" width="300" alt="The 3D-printed prototype of the front panel: black, textured, with two combo jacks, knobs, four toggle switches and a window for the screen">
   <img src="media/2026-09-17-1940-meters.jpg" width="300" alt="The assembled interface with the OLED showing input labels and levels in dBFS">
 </p>
 
-Three hours after packaging the boards I started modeling the enclosure (the Fusion design for it has 55 versions). It's flat aluminum plates held together with printed brackets. I cut the panels on the same CNC, including the window for the screen, and there's also a printed version of the front panel. The lid has the whole board layout engraved on it, traces and all, with labels and the wires running out to the jacks:
+Three hours after packaging the boards I started modeling the enclosure (the Fusion design for it has 55 versions). It's flat aluminum plates held together with printed brackets. I 3D-printed a prototype of every piece first to make sure it all fit (that's the printed front panel above), then cut and engraved the aluminum panels on the same CNC, including the window for the screen. The lid has the whole board layout engraved on it, traces and all, with labels and the wires running out to the jacks:
 
 <img src="enclosure/top-plate/top-plate.png" width="520" alt="Line drawing of the board for the lid: top and bottom copper, part labels, wires to every jack, BARE-METAL AUDIO title and my name">
 
 By 7:40 pm on September 17 it was all in the box with the screen working.
 
-### Then I fried it
+### About ten seconds later: I fried it
 
-Then I fried it with my 48 V supply. The Teensy didn't make it, so the screen and the audio are dead, and the whole thing lives in a box in my dorm now.
+The photo at the top of this page is the last one of it working. I'd connected the front panel parts to the board with ordinary Dupont jumper connectors that I crimped by hand, and my guess is that a few of them shorted. The Teensy is dead dead. I haven't checked the shield or the preamps, since nothing works without the Teensy anyway.
+
+There was no time to diagnose it before I left for Stanford, and I've been too busy on campus since then to give it the effort. It lives in a box in my dorm now.
 
 ## How it works
 
@@ -155,7 +157,7 @@ The display is slow to update (a full redraw blocks for about 26 ms), so the kno
 | Path | What it is |
 |---|---|
 | [`firmware/`](firmware/) | The first USB audio sketch (June 30) and the UI sketch (August 4) |
-| [`hardware/`](hardware/) | Gerbers, drill files, BOM and pick-and-place for the board I ordered, the August files I milled (Gerbers, G-code, height maps), and renders |
+| [`hardware/`](hardware/) | The Eagle schematic and board files (final, first and August versions), Gerbers, drill files, BOM and pick-and-place for the board I ordered, the August files I milled (Gerbers, G-code, height maps), and renders |
 | [`enclosure/`](enclosure/) | The lid engraving (SVG, PNG, DXF), the 3D-print project for the brackets and panels, and a list of the Fusion designs |
 | [`media/`](media/) | Photos, GIFs, the demo video and the first recording |
 
@@ -163,6 +165,7 @@ The display is slow to update (a full redraw blocks for about 26 ms), so the kno
 
 - I don't have noise or latency numbers for it. The two recordings in `media/` are what I have.
 - The breadboard version has the buffer bug you can hear in the video.
+- I never tracked down what shorted.
 - The UI sketch was written for the breadboard, and its encoder pins don't match the final board's encoder header. [`firmware/README.md`](firmware/README.md) has the details.
 
 ## Credits
@@ -170,3 +173,7 @@ The display is slow to update (a full redraw blocks for about 26 ms), so the kno
 - PJRC for the Teensy, the Audio Shield and the Teensy Audio Library.
 - Candle, for running the CNC and following the height maps.
 - Part symbols and footprints from the libraries listed in [`hardware/README.md`](hardware/README.md).
+
+## License
+
+MIT for my firmware and design files ([`LICENSE`](LICENSE)). The part libraries embedded in the Eagle files keep their own licences; see [`hardware/README.md`](hardware/README.md#third-party-data).

@@ -6,8 +6,6 @@ Final revision (2026-09-07): 100 x 140 mm, 2 copper layers, 1.6 mm, 57 placed pa
 
 ## Contents
 
-The Eagle schematic and board files (`design/`, `design/history/` and `cnc-milled-2026-08/design/`) aren't published yet. A few of the part libraries embedded in them don't allow redistribution, and I'm sorting that out first. Everything needed to order the board (Gerbers, drill files, BOM) is here.
-
 | Path | What it is |
 |---|---|
 | `design/` | Final schematic and board (2026-09-07), saved as Eagle XML by Fusion Electronics, and the design-rules file |
@@ -54,7 +52,7 @@ Headers (2.54 mm):
 ## Ordering the final board
 
 1. Zip the `.gbr` files in `fab-2026-09-07/gerbers/` together with one drill file from step 2, and upload the zip as a 2-layer, 100 x 140 mm, 1.6 mm board.
-2. The drill file made for JLCPCB is `fab-2026-09-07/drill/drill_1_64_JLC_consolidated.xln`. It has the same 188 holes as `drill_1_64.xln` with 0.750 mm holes changed to 0.762 mm and 1.000 mm holes changed to 1.016 mm, which leaves 8 distinct diameters instead of 10.
+2. I ordered mine from PCBWay (five boards, HASL finish, 1 oz copper) with the original Sep 7 zip, so the drill file is `fab-2026-09-07/drill/drill_1_64.xln`. `drill_1_64_JLC_consolidated.xln` is an alternate I made for JLCPCB: the same 188 holes with 0.750 mm holes changed to 0.762 mm and 1.000 mm holes changed to 1.016 mm, which leaves 8 distinct diameters instead of 10.
 3. `fab-2026-09-07/assembly/` has the Fusion BOM and pick-and-place text exports. All parts are through-hole, so assembly is by hand.
 4. Not in the BOM: the XLR or combo jacks, gain pots, switches, encoder, OLED, the +/-12 V module, the Audio Shield and the Teensy.
 5. The BOM row for IC3 is labeled OPA1642 but its package and vendor fields were copied from the THAT1512 entry. Check the footprint before ordering parts.
@@ -65,4 +63,4 @@ Headers (2.54 mm):
 
 ## Third-party data
 
-The schematic and board embed the part symbols and footprints they use. The audio shield, Teensy, OLED, NCJ6FI-H and OPA1642 library files this work started from carry a CC BY-SA 4.0 (with Design Exception 1.0) header. The BOM carries an Ultra Librarian copyright line for the TE Connectivity resistor footprint.
+The schematic and board embed the part symbols and footprints they use. The audio shield, Teensy, OLED, NCJ6FI-H and OPA1642 library files this work started from carry a CC BY-SA 4.0 (with Design Exception 1.0) header. The BOM carries an Ultra Librarian copyright line for the TE Connectivity resistor footprint. The 2N5551 and QYX2A104JTP parts come from SamacSys and carry SamacSys's licence text.
