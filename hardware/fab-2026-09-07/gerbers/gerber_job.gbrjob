@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2026-09-07T23:17:43Z",
+        "GenerationSoftware": {
+            "Application": "Fusion Electronics",
+            "Vendor": "Autodesk",
+            "Version": "9.7.0"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.6608,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "AUDIO INTERFACE_brokener_forbuying"
+        },
+        "Owner": "Ryan McCormick",
+        "Size": {
+            "X": 100.000053,
+            "Y": 139.999975
+        }
+    }
+}
